@@ -1,0 +1,34 @@
+# === IDEs y Editores de Texto ===
+# Configuraciones de JetBrains (WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+
+# Configuraciones de VS Code
+.vscode/
+*.code-workspace
+
+# === Archivos del Sistema Operativo ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Docker & Logs ===
+*.log
+.docker/
+# Si en el futuro usas variables de entorno locales, no deben subirse
+.env
+.env.local
+.env.*.local
+
+# === Dependencias y Construcción (Para cuando evoluciones el proyecto) ===
+node_modules/
+dist/
+build/
+.bun/
+
+# === Gitmodules / Submódulos ===
+# NOTA: Git gestiona los submódulos automáticamente mediante el archivo .gitmodules.
+# Aquí solo ignoramos archivos temporales o configuraciones que puedan surgir de ellos.
+.git/modules/
