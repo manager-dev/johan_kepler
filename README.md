@@ -1,5 +1,5 @@
 ---
-proyecto: Portal Institucional Johan Kepler
+proyecto: Portal Institucional Colegio Johan Kepler
 estado: Fase 1 (Legacy HTML) -> Planificación Fase 2 (Astro Migración)
 progreso: 15% (Estructura Base Completada)
 última_actualización: 2026-05-17
@@ -13,11 +13,18 @@ tags:
 
 # 🚀 Portal Web Institucional - Colegio Johan Kepler (Soyapango)
 
+## 📋 Proyecto de Servicio Social Universitario
+### 🎓 Técnico Superior Universitario en Servicios en la Nube | ESIT
+
+---
 ### 🛡️ Estado de Infraestructura Actual vs. Objetivo
 ![Current Stage: HTML5](https://img.shields.io/badge/Current-HTML5%20%252B%20TailwindCDN-orange?style=for-the-badge&logo=html5) ![Target Stage: Astro](https://img.shields.io/badge/Target-Astro%20%252B%20SolidJS-purple?style=for-the-badge&logo=astro) ![Runtime: Docker](https://img.shields.io/badge/Runtime-Docker%20Alpine-blue?style=for-the-badge&logo=docker)
 
+---
+
 > [!IMPORTANT]
 > **AUDITORÍA TÉCNICA DE LAVERSIÓN ACTUAL (V1.0-LEGACY):**
+> 
 > El repositorio contiene actualmente un despliegue estático monolítico basado en HTML5 puro maquetado con **Tailwind CSS vía CDN** y servido mediante un contenedor optimizado de **Nginx Alpine**. Este documento establece la radiografía del código base real subido y traza la ruta crítica de refactorización hacia la arquitectura desacoplada de alto rendimiento (Astro + Bun + Solid.js) dictada por la constitución de nuestro `Digital_Brain`.
 
 ---
@@ -41,6 +48,7 @@ El código actual está diseñado bajo un modelo de contingencia ligero, pero in
 * **`assets/` (Multimedia):** Contiene `logo.png` y `fachada.jpg`. Las imágenes están en formatos crudos (PNG/JPG) sin compresión moderna ni variantes adaptativas.
 * **`Dockerfile` (Contenedorización):** Construcción correcta basada en `nginx:1.25-alpine`. Implementa buenas prácticas de seguridad perimetral mediante la reasignación de permisos (`chown -R nginx:nginx` y `chmod 755`), garantizando que el servidor web corra sin privilegios de root.
 * **`docker-compose.yml` (Orquestación Local):** Aplica límites estrictos de control de recursos (FinOps) asignando un máximo de `0.1 CPUs` y `50M de memoria RAM`. 
+
   > [!WARNING]
   > **Restricción de Red en Compose:** El archivo bindea explícitamente el puerto a la IP estática `192.168.1.90:8080:80`. Esto causará un fallo de inicialización (`bind: cannot assign requested address`) en entornos de desarrollo cuyas interfaces de red locales no coincidan con ese segmento.
 
