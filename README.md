@@ -39,8 +39,8 @@ A través de este portal, se unifica su identidad pedagógica humanista y cient�
 
 ---
 ## 🚀 Repositorio y Enlaces Oficiales
-* **Repositorio de Producción (GitHub):** [https://github.com/manager-dev/IBB_Pueblo_de_Israel](https://github.com/manager-dev/IBB_Pueblo_de_Israel)
-* **Sitio Web Activo (Producción):** [https://pueblodeisrael.portalweb.cc/](https://pueblodeisrael.portalweb.cc/)
+* **Repositorio de Producción (GitHub):** [https://github.com/manager-dev/Johan_Kepler](https://github.com/manager-dev/Johan_Kepler)
+* **Sitio Web Activo (Producción):** [https://johankepler.portalweb.cc/](https://johankepler.portalweb.cc/)
 * **Entidad Receptora:** Dirección y Administración - Iglesia Bíblica Bautista Pueblo de Israel / Colegio Johan Kepler.
 * **Responsable Institucional:** Licenciada Flor de María Hernández.
 
