@@ -29,6 +29,23 @@ tags:
 
 ---
 
+## ⚡ **Resumen Ejecutivo del Estado del Proyecto**
+
+Este repositorio alberga el código fuente, la configuración de infraestructura y el entorno contenerizado del sitio web institucional para el **Colegio Johan Kepler**, ubicado en el polo urbano-industrial de Soyapango, San Salvador, El Salvador.
+
+El desarrollo, optimización y despliegue de este activo digital ha sido planificado e implementado como cumplimiento del **Servicio Social obligatorio** para mis estudios de ingeniería bajo el marco normativo de la **Escuela Superior de Innovación y Tecnología (ESIT)**. El propósito fundamental de esta plataforma es dotar a la institución educativa de un portal web de alta disponibilidad, rendimiento _Edge-First_ (optimizado para las condiciones de conectividad móvil de la zona) y diseño modular.
+
+A través de este portal, se unifica su identidad pedagógica humanista y científica, visibilizando su oferta académica alineada al Ministerio de Educación (MINED) —incluyendo los programas **ESMATE** y **ESLENGUA** para la prueba **AVANZO**—, sus Bachilleratos Técnicos Vocacionales, las jornadas extendidas adaptadas a las familias trabajadoras del sector industrial y su alianza internacional exclusiva con **FUNIBER - UNEATLANTICO** para la proyección global de sus egresados.
+
+---
+## 🚀 Repositorio y Enlaces Oficiales
+* **Repositorio de Producción (GitHub):** [https://github.com/manager-dev/IBB_Pueblo_de_Israel](https://github.com/manager-dev/IBB_Pueblo_de_Israel)
+* **Sitio Web Activo (Producción):** [https://pueblodeisrael.portalweb.cc/](https://pueblodeisrael.portalweb.cc/)
+* **Entidad Receptora:** Dirección y Administración - Iglesia Bíblica Bautista Pueblo de Israel / Colegio Johan Kepler.
+* **Responsable Institucional:** Licenciada Flor de María Hernández.
+
+---
+
 ## 🏫 1. Diagnóstico del Dominio e Identidad Territorial
 
 El **Colegio Johan Kepler** requiere una plataforma web diseñada para la realidad socioeconómica y de conectividad de **Soyapango**. El diseño visual implementado en `index.html` ya refleja de forma exitosa los pilares del negocio educativo:
@@ -78,6 +95,31 @@ docker build -t johan-kepler:legacy .
 docker run -d -p 8080:80 --name kepler_demo johan-kepler:legacy
 ```
 El portal estará disponible inmediatamente en `http://localhost:8080`.
+
+---
+
+## 📂 Árbol Estructural del Proyecto
+
+Al ser un desarrollo en **Fase 1 (Legacy HTML)**, la estructura es sumamente limpia, monolítica y directa, ideal para servir archivos estáticos con el mínimo consumo de recursos en Nginx Alpine:
+
+```
+Johan_Kepler/
+├── .git/                 # Metadatos y control de versiones (Mapeado como submódulo de ESIT)
+├── assets/               # Recursos multimedia estáticos del colegio
+│   ├── fachada.jpg       # Fotografía de las instalaciones (Uso en sección Hero/Ubicación)
+│   └── logo.png          # Escudo o logotipo de la institución
+├── .gitignore            # Exclusiones de Git (Filtra entornos locales, logs y carpetas de editores)
+├── docker-compose.yml    # Orquestación local y límites de recursos (FinOps)
+├── Dockerfile            # Construcción de la imagen inmutable basada en Nginx Alpine
+├── index.html            # Punto de entrada único (Estructura, lógica Tailwind CDN y contenidos)
+└── README.md             # Documentación técnica, estado del arte y roadmap del proyecto
+```
+
+### 📌 Notas de la estructura actual:
+
+- **`index.html` es el núcleo:** Al no tener carpetas como `/css` o `/js`, toda la configuración de la paleta de colores institucional (`kepler-red`, `kepler-gold`, etc.), los estilos y el script de interacción del menú responsivo conviven en este archivo.
+    
+- **Aislamiento multimedia:** La carpeta `assets/` almacena el peso gráfico, lo que facilitará su procesamiento masivo cuando los convirtamos a formatos optimizados (`.webp`/`.avif`) en la fase de Astro.
 
 ---
 
