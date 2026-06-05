@@ -1,5 +1,5 @@
 services:
-  kepler-web:
+  web_institucional:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,8 +10,10 @@ services:
         limits:
           cpus: '0.1'
           memory: 50M
+    # Solución al hardcoding de IP usando fallbacks seguros:
     ports:
-      - "192.168.1.90:8080:80"
+      - "${HOST_IP:-127.0.0.1}:${HOST_PORT:-8080}:80"
+    #restart: unless-stopped
     restart: always
     # Red aislada para seguridad
     networks:
