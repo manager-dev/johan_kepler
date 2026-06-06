@@ -1,20 +1,15 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+// Aquí iremos importando los demás componentes (Hero, Footer, etc.) conforme los creemos
 ---
 
 <Layout title="Colegio Johan Kepler - Soyapango">
-    <main class="flex items-center justify-center min-h-screen bg-white">
-        <div class="text-center p-8 space-y-4">
-            <h1 class="text-4xl font-black text-kepler-red uppercase">
-                ¡Entorno de Astro Inicializado!
-            </h1>
-            <p class="text-slate-600 font-medium max-w-md mx-auto">
-                El cascarón del portal del Colegio Johan Kepler está corriendo de forma nativa con Bun y Tailwind CSS purgado.
-            </p>
-            <div class="inline-block bg-kepler-gold text-black font-bold px-4 py-2 rounded text-xs uppercase tracking-widest">
-                Fase 2 - Migración en Progreso
-            </div>
-        </div>
-    </main>
+    
+    <Navbar />
+
+    <main>
+        </main>
+
 </Layout>
